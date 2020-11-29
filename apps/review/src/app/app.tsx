@@ -1,25 +1,45 @@
 import React, { useEffect, useState } from 'react';
-import { Message } from '@bghoard/api-interfaces';
+import { Game } from '@bghoard/api-interfaces';
+
+export const currencyFormat
+    = (amount: number) => '$' + amount.toFixed(2);
+export const ratingFormat
+    = (rating: number) => (
+        rating === undefined
+        ? '?'
+        : rating.toFixed(0)
+    ) + '/5';
 
 export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
+  const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
-    fetch('/api')
+    fetch('/api/game')
       .then((r) => r.json())
-      .then(setMessage);
+      .then(setGames);
   }, []);
 
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to review!</h1>
-        <img
-          width="450"
-          src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-        />
+        <h1>Board Game Hoard: Review</h1>
+        {games.map(game => {
+          return (
+              <>
+                  <a
+                    href={'/' + game.id}
+                    key={game.id}
+                  >
+                      <img src={game.image}/>
+                      <h2>{game.name}</h2>
+                      <p>{ratingFormat(game.rating)}</p>
+                      <p>{currencyFormat(game.price)}</p>
+                  </a>
+
+              </>
+          );
+        })}
       </div>
-      <div>{m.message}</div>
     </>
   );
 };

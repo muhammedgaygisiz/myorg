@@ -30,7 +30,7 @@ export const games: Game[] = [
     {
         id: 'chess-pie',
         name: 'Chess Pie',
-        image: '/assets/chess.png',
+        image: '/assets/chess.jpg',
         description:
             `A circular game of Chess that you can eat as you play.`,
         price: 15,
@@ -38,4 +38,4 @@ export const games: Game[] = [
     }
 ];
 
-export const getGames = () => games;
+export const getGames = (req, res) => res.send(games);
