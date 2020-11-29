@@ -6,6 +6,7 @@ import { ReactComponent as Logo } from './logo.svg';
 import star from './star.svg';
 
 import { Route, Link } from 'react-router-dom';
+import { PageTitle } from "@my-org/ui-header";
 
 export function App() {
   /*
@@ -18,6 +19,7 @@ export function App() {
       <header className="flex">
         <Logo width="75" height="75" />
         <h1>Welcome to my-site!</h1>
+        <PageTitle />
       </header>
       <main>
         <h2>Resources &amp; Tools</h2>
