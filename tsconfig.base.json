@@ -16,8 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-org/ui-header": ["libs/ui-header/src/index.ts"],
-      "@my-org/api-interface": ["libs/api-interface/src/index.ts"]
+      "@bghoard/api-interfaces": ["libs/api-interfaces/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

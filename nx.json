@@ -1,5 +1,5 @@
 {
-  "npmScope": "my-org",
+  "npmScope": "bghoard",
   "affected": {
     "defaultBase": "master"
   },
@@ -23,20 +23,17 @@
     }
   },
   "projects": {
-    "my-site": {
+    "review": {
       "tags": []
     },
-    "my-site-e2e": {
+    "review-e2e": {
       "tags": [],
-      "implicitDependencies": ["my-site"]
-    },
-    "ui-header": {
-      "tags": []
+      "implicitDependencies": ["review"]
     },
     "api": {
       "tags": []
     },
-    "api-interface": {
+    "api-interfaces": {
       "tags": []
     }
   }

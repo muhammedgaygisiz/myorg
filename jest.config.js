@@ -1,8 +1,7 @@
 module.exports = {
   projects: [
-    '<rootDir>/apps/my-site',
-    '<rootDir>/libs/ui-header',
+    '<rootDir>/apps/review',
     '<rootDir>/apps/api',
-    '<rootDir>/libs/api-interface',
+    '<rootDir>/libs/api-interfaces',
   ],
 };
